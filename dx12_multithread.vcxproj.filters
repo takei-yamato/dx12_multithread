@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="entry\main.cpp">
+      <Filter>entry</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\thread.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\time_counter.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="window\window.cpp">
+      <Filter>window</Filter>
+    </ClCompile>
+    <ClCompile Include="input\input.cpp">
+      <Filter>input</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\command_list.cpp">
+      <Filter>dx12</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\command_queue.cpp">
+      <Filter>dx12</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\device.cpp">
+      <Filter>dx12</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\fence.cpp">
+      <Filter>dx12</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\swap_chain.cpp">
+      <Filter>dx12</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\graphics\pipeline_state_object.cpp">
+      <Filter>dx12\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\graphics\shader.cpp">
+      <Filter>dx12\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\resource\constant_buffer.cpp">
+      <Filter>dx12\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\resource\frame_buffer.cpp">
+      <Filter>dx12\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="dx12\resource\mesh.cpp">
+      <Filter>dx12\resource</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\log.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="def.h" />
+    <ClInclude Include="utility\singleton.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\thread.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\time_counter.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="window\window.h">
+      <Filter>window</Filter>
+    </ClInclude>
+    <ClInclude Include="input\input.h">
+      <Filter>input</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\command_list.h">
+      <Filter>dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\command_queue.h">
+      <Filter>dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\device.h">
+      <Filter>dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\fence.h">
+      <Filter>dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\swap_chain.h">
+      <Filter>dx12</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\graphics\pipeline_state_object.h">
+      <Filter>dx12\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\graphics\shader.h">
+      <Filter>dx12\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\resource\constant_buffer.h">
+      <Filter>dx12\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\resource\frame_buffer.h">
+      <Filter>dx12\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="dx12\resource\mesh.h">
+      <Filter>dx12\resource</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\noncopyable.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\log.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="entry">
+      <UniqueIdentifier>{c64a6846-c76d-420a-87f6-ee8425bab7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{85ec1f30-c037-4ba0-9249-58be143f617e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{e472b20a-e29f-43ae-aeb4-c81d0ca9f0a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="window">
+      <UniqueIdentifier>{88196cab-d95c-4f8a-a36e-513f0bdf284d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dx12">
+      <UniqueIdentifier>{b5ab5b9d-6d22-41e0-b8c0-c480ded7d54e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dx12\graphics">
+      <UniqueIdentifier>{e4317d5d-7615-433d-b45d-f55c457bd0c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dx12\resource">
+      <UniqueIdentifier>{fb933052-e2ff-486c-ae04-5f15c1d3effb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
