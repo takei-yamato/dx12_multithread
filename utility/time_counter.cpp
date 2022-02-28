@@ -2,6 +2,10 @@
 #include "utility/log.h"
 #include <chrono>
 
+namespace {
+	constexpr double framerate = 60;
+}
+
 namespace utility {
 	using namespace std;
 
@@ -47,10 +51,11 @@ namespace utility {
 	void TimeContainer::add(std::string_view tag, double microsec) noexcept {
 		const auto& it = container_.find(tag.data());
 		if (it == container_.end()) {
-			container_.insert(std::make_pair(tag, microsec));
+			container_.emplace(tag, Data{ microsec, 1 });
 		}
 		else {
-			it->second += microsec;
+			it->second.total_ = (it->second.count_ == framerate) ? microsec : it->second.total_ + microsec;
+			it->second.count_ = (it->second.count_ == framerate) ? 1 : it->second.count_ + 1;
 		}
 	}
 
@@ -71,14 +76,19 @@ namespace utility {
 	 */
 	void TimeContainer::print(std::string_view tag) const noexcept {
 		if (tag.empty()) {
-			for (auto& x : container_) {
-				TRACE("tag [ %s ] : millisec [ %f ]", x.first.c_str(), x.second / 1000.0f);
+			for (const auto& x : container_) {
+				if (x.second.count_ < framerate) {
+					continue;
+				}
+				TRACE("tag [ %s ] : millisec [ %f ]", x.first.c_str(), (x.second.total_ / x.second.count_) / 1000.0f);
 			}
 		}
 		else {
-			auto it = container_.find(tag.data());
+			const auto it = container_.find(tag.data());
 			if (it != container_.end()) {
-				TRACE("tag [ %s ] : millisec [ %f ]", it->first.c_str(), it->second / 1000.0f);
+				if (framerate <= it->second.count_) {
+					TRACE("tag [ %s ] : millisec [ %f ]", it->first.c_str(), (it->second.total_ / it->second.count_) / 1000.0f);
+				}
 			}
 		}
 	}

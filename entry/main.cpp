@@ -131,7 +131,7 @@ namespace {
 						commandLists[index].get()->DrawIndexedInstanced(6, 1, 0, 0, 0);
 					}
 					commandLists[index].get()->Close();
-				});
+					});
 			}
 
 			// 描画終了
@@ -161,24 +161,24 @@ namespace {
 				// フレームバッファのインデックスを更新する
 				frameBuffer.updateBufferIndex(SwapChain::instance().currentBufferIndex());
 			}
-
-			// フェンス設定
-			{
-				fence.get()->Signal(0);
-				commandQueue.get()->Signal(fence.get(), 1);
-			}
-
-			// GPU処理が全て終了するまでCPUを待たせる
-			{
-				auto event = CreateEvent(nullptr, false, false, "WAIT_GPU");
-				fence.get()->SetEventOnCompletion(1, event);
-				WaitForSingleObject(event, INFINITE);
-				CloseHandle(event);
-			}
 		}
 
+		// 時間表示
 		TIME_PRINT("");
-		TIME_CLEAR("更新時間");
+
+		// フェンス設定
+		{
+			fence.get()->Signal(0);
+			commandQueue.get()->Signal(fence.get(), 1);
+		}
+
+		// GPU処理が全て終了するまでCPUを待たせる
+		{
+			auto event = CreateEvent(nullptr, false, false, "WAIT_GPU");
+			fence.get()->SetEventOnCompletion(1, event);
+			WaitForSingleObject(event, INFINITE);
+			CloseHandle(event);
+		}
 
 		return true;
 	}

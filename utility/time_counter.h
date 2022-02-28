@@ -47,6 +47,11 @@ namespace utility {
 	private:
 		friend class Singleton<TimeContainer>;
 
+		struct Data {
+			double	total_ = {};
+			double	count_ = {};
+		};
+
 	public:
 		//---------------------------------------------------------------------------------
 		/**
@@ -85,7 +90,7 @@ namespace utility {
 
 
 	private:
-		std::unordered_map<std::string, double>	container_;	///< 識別タグと計測時間のコンテナ
+		std::unordered_map<std::string, Data>	container_;	///< 識別タグと計測時間のコンテナ
 	};
 }
 
